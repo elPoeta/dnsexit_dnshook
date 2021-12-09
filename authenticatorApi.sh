@@ -30,4 +30,6 @@ until dig -t txt ${txtName} | grep ${txtValue} 2>&1 > /dev/null; do
   fi
 done
 
+rm ${filename}
+
 exit 0
