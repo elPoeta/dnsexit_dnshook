@@ -3,13 +3,11 @@
 echo "Test Authenticator Script"
 
 # ask for user input
-read -p 'DNSExit filename: ' filename
-read -p 'DNSExit json: ' json
+read -p 'DNSExit api-key:: ' apikey
 read -p 'DNSExit Domain:: ' domain
 
 # export variables
-export FILE_NAME=${filename}
-export JSON=${json}
+export API_KEY=${apikey}
 export CERTBOT_DOMAIN=${domain}
 export CERTBOT_VALIDATION=jfEVZCbJH_J96HjWXPNGoW0rpolrztrA-arVqPTre8c
 

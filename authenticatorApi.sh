@@ -1,11 +1,25 @@
 #!/bin/bash -ex
 
 # certbot environment variables
+apikey="${API_KEY}"
 certbotDomain="${CERTBOT_DOMAIN}"
 validation="${CERTBOT_VALIDATION}"
-filename="${FILE_NAME}.json"
-json="${JSON}"
+filename="update.json"
 
+json=$(cat <<-END
+  {
+    "apikey": "${apikey}",
+    "domain": "${certbotDomain}",
+    "add": {
+      "type": "TXT",
+      "name": "_acme-challenge.${certbotDomain}",
+      "content": "${validation}",
+      "ttl": 3600,
+      "overwrite": true
+    }
+  }
+END
+) 
 # write json file
 echo "${json}" > ${filename}
 
