@@ -44,6 +44,7 @@ until dig -t txt ${txtName} | grep ${txtValue} 2>&1 > /dev/null; do
   fi
 done
 
+# delete json file
 rm ${filename}
 
 exit 0
